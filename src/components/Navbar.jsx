@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Navbar = ({ activeSection, setActiveSection, isHome, setIsHome }) => {
+// eslint-disable-next-line no-unused-vars
+const Navbar = ({ activeSection, isHome, setActiveSection, setIsHome }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   const handleNavClick = (sectionId) => {

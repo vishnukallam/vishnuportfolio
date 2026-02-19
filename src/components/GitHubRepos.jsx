@@ -9,27 +9,32 @@ const GitHubRepos = () => {
     const fetchRepos = async () => {
       const repoNames = ['C_Preprocessing', 'TensorFlow', 'Employee_Database'];
       try {
+        const headers = {};
+        const token = import.meta.env.VITE_GITHUB_TOKEN;
+        if (token) {
+          headers['Authorization'] = `token ${token}`;
+        }
+
         const repoData = await Promise.all(
           repoNames.map(async (name) => {
-            const repoRes = await fetch(`https://api.github.com/repos/vishnukallam/${name}`);
+            const repoRes = await fetch(`https://api.github.com/repos/vishnukallam/${name}`, { headers });
             if (!repoRes.ok) return null;
             const repo = await repoRes.json();
             
             // Fetch README for description
             try {
-              const readmeRes = await fetch(`https://api.github.com/repos/vishnukallam/${name}/readme`);
+              const readmeRes = await fetch(`https://api.github.com/repos/vishnukallam/${name}/readme`, { headers });
               if (readmeRes.ok) {
                 const readmeData = await readmeRes.json();
                 const content = atob(readmeData.content);
                 // Simple summary extraction: strip common markdown and get first meaningful line
                 const summary = content
                   .split('\n')
-                  .map(line => line.replace(/[#*`\[\]]/g, '').trim()) // Strip markdown chars
-                  .filter(line => line && !line.startsWith('!')) // Filter out empty or image lines
-                  [0] || repo.description;
+                  .map(line => line.replace(/[#*`[\]]/g, '').trim()) // Strip markdown chars
+                  .filter(line => line && !line.startsWith('!'))[0] || repo.description; // Filter out empty or image lines
                 repo.readmeSummary = summary;
               }
-            } catch (e) {
+            } catch {
               console.error("Failed to fetch README for", name);
             }
             
