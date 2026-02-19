@@ -7,9 +7,8 @@ const Certifications = () => {
   const [lightboxImage, setLightboxImage] = useState(null);
   const [isZoomed, setIsZoomed] = useState(false);
 
-  const openLightbox = (image) => {
-    setLightboxImage(image);
-    setIsZoomed(false);
+  const openLightbox = (imgSrc) => {
+    setLightboxImage(imgSrc);
   };
 
   const closeLightbox = () => {
@@ -53,7 +52,7 @@ const Certifications = () => {
 
         <div className="certs-grid" id="certsGrid">
           {certs.map(cert => (
-            <div className="cert-card" key={cert.id} onClick={() => setLightboxImage(cert.image)}>
+            <div className="cert-card" key={cert.id} onClick={() => openLightbox(cert.image)}>
               <h3>{cert.title}</h3>
               <p>Issued by: {cert.issuer}</p>
               <img
