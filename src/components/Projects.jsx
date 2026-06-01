@@ -26,10 +26,7 @@ const Projects = () => {
           <div className="project-card">
             <h3>Electric Car Shop</h3>
             <p>
-              A modern, responsive e-commerce layout designed specifically for
-              showcasing electric vehicles. The platform features an intuitive
-              interface for browsing and exploring the latest electric car
-              models with detailed specifications and features.
+              
             </p>
             <div className="project-tags">
               <span className="project-tag">E-commerce</span>
