@@ -24,7 +24,7 @@ const Projects = () => {
           </div>
 
           <div className="project-card">
-            <h3>Electric Car Shop</h3>
+            <h3>Online Compliler Platform</h3>
             <p>
               
             </p>
