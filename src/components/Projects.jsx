@@ -15,7 +15,7 @@ const Projects = () => {
               termination. This intelligent auto-disconnect charger helps
               prevent overcharging and extend the lifespan of device batteries.
               A Bluetooth smart charger prototype and mobile app for automatic control, theoretically reducing overcharge risk by 85% and extending battery lifespan by 12-24%, 
-              while decreasing battery swelling risk by 90-95% and eliminating manual unplugging 
+              while decreasing battery swelling risk by 90-95% and eliminating manual unplugging.
             </p>
           </div>
 
