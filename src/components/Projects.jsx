@@ -20,7 +20,7 @@ const Projects = () => {
           <div className="project-card">
             <a 
               href = "https://onlinecompilerplatform.vercel.app/" 
-              style = "text-decoration: none;">
+              style = {{text-decoration: none}}>
               <h3>Online Compliler Platform</h3>
             </a>
             <p>
