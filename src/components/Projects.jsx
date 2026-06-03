@@ -27,10 +27,8 @@ const Projects = () => {
             <h3>Online Compliler Platform</h3>
             <p>
               A web-based coding environment enabling users to write, compile, and execute programs in real time through an interactive browser-based environment. 
-              Built a responsive code editor using Monaco Editor with live terminal support powered by Xterm.js and Socket.IO for real-time communication. 
-              Implemented backend execution workflows using Node.js, Express, and Docker/native execution engines to securely run Python and Java programs with interactive input/output handling. 
+              Implemented execution engines to securely run Python and Java programs with interactive input/output handling. 
               Added features such as file management, package installation, visual output rendering, and cloud deployment support using Vercel, Render, and Docker. 
-              Focused on delivering a seamless coding experience with efficient execution, scalability, and modern UI design.
             </p>
             <div className="project-tags">
               <span className="project-tag">E-commerce</span>
