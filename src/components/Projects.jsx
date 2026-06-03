@@ -36,13 +36,16 @@ const Projects = () => {
           </div>
 
           <div className="project-card">
-            <h3>Employee Management System</h3>
+            <a 
+              href="https://demographic-social-app-4.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: 'none', color: 'inherit' }} 
+              >
+              <h3>KON-NECT – Real-Time Social Discovery Platform</h3>
+            </a>
             <p>
-              A comprehensive full-stack application built using MongoDB and
-              JavaScript frameworks. This system facilitates secure data
-              persistence and streamlined record-keeping for employees
-              information, enabling efficient management of workforce data with
-              robust authentication and data handling capabilities.
+              
             </p>
           </div>
         </div>
