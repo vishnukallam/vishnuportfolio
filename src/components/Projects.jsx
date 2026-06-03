@@ -15,12 +15,6 @@ const Projects = () => {
               termination. This intelligent auto-disconnect charger helps
               prevent overcharging and extends the lifespan of device batteries.
             </p>
-            <div className="project-tags">
-              <span className="project-tag">IoT</span>
-              <span className="project-tag">Hardware</span>
-              <span className="project-tag">Automation</span>
-              <span className="project-tag">Innovation</span>
-            </div>
           </div>
 
           <div className="project-card">
@@ -30,12 +24,6 @@ const Projects = () => {
               Implemented execution engines to securely run Python and Java programs with interactive input/output handling. 
               Added features such as file management, package installation, visual output rendering, and cloud deployment support using Vercel, Render, and Docker. 
             </p>
-            <div className="project-tags">
-              <span className="project-tag">E-commerce</span>
-              <span className="project-tag">Web Design</span>
-              <span className="project-tag">Frontend</span>
-              <span className="project-tag">Responsive</span>
-            </div>
           </div>
 
           <div className="project-card">
@@ -47,12 +35,6 @@ const Projects = () => {
               information, enabling efficient management of workforce data with
               robust authentication and data handling capabilities.
             </p>
-            <div className="project-tags">
-              <span className="project-tag">Full Stack</span>
-              <span className="project-tag">MongoDB</span>
-              <span className="project-tag">JavaScript</span>
-              <span className="project-tag">CRUD</span>
-            </div>
             <a
               href="https://github.com/vishnukallam/Employee_Database"
               target="_blank"
