@@ -45,7 +45,12 @@ const Projects = () => {
               <h3>KON-NECT – Real-Time Social Discovery Platform</h3>
             </a>
             <p>
-              
+              **KON-NECT**, a real-time location-based social discovery platform that connects users with nearby people sharing similar interests.
+              Built an interactive live map with real-time location updates, smart interest matching, friend requests, and privacy-focused social discovery within a 20km radius. 
+              Implemented encrypted persistent messaging, live unread notifications, and mutual connection-based chat. 
+              Integrated turn-by-turn navigation, place search, dropped pins, and dynamic route tracking for real-world interaction. 
+              Added personalized dashboards, trending interest analytics, blocking mechanisms, and dark/light mode support, creating a secure and engaging platform for meaningful local connections.
+
             </p>
           </div>
         </div>
