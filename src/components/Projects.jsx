@@ -18,7 +18,7 @@ const Projects = () => {
           </div>
 
           <div className="project-card">
-            <a href = "https://vishnu-gold.vercel.app/" >
+            <a href = "https://onlinecompilerplatform.vercel.app/" >
               <h3>Online Compliler Platform</h3>
             </a>
             <p>
