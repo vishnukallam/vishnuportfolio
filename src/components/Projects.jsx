@@ -13,7 +13,9 @@ const Projects = () => {
               A TIH-IoT Chanakya-funded hardware innovation designed to enhance
               battery longevity through automated, user-defined power
               termination. This intelligent auto-disconnect charger helps
-              prevent overcharging and extends the lifespan of device batteries.
+              prevent overcharging and extend the lifespan of device batteries.
+              A Bluetooth smart charger prototype and mobile app for automatic control, theoretically reducing overcharge risk by 85% and extending battery lifespan by 12-24%, 
+              while decreasing battery swelling risk by 90-95% and eliminating manual unplugging 
             </p>
           </div>
 
@@ -38,20 +40,10 @@ const Projects = () => {
             <p>
               A comprehensive full-stack application built using MongoDB and
               JavaScript frameworks. This system facilitates secure data
-              persistence and streamlined record-keeping for employee
+              persistence and streamlined record-keeping for employees
               information, enabling efficient management of workforce data with
               robust authentication and data handling capabilities.
             </p>
-            <a
-              href="https://github.com/vishnukallam/Employee_Database"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-              style={{ marginTop: '1rem', display: 'inline-flex' }}
-            >
-              <i className="fab fa-github"></i>
-              View on GitHub
-            </a>
           </div>
         </div>
       </div>
