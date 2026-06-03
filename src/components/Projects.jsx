@@ -18,7 +18,9 @@ const Projects = () => {
           </div>
 
           <div className="project-card">
-            <h3>Online Compliler Platform</h3>
+            <a href = "https://vishnu-gold.vercel.app/" >
+              <h3>Online Compliler Platform</h3>
+            </a>
             <p>
               A web-based coding environment enabling users to write, compile, and execute programs in real time through an interactive browser-based environment. 
               Implemented execution engines to securely run Python and Java programs with interactive input/output handling. 
