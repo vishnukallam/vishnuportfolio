@@ -54,18 +54,15 @@ const Projects = () => {
 
            <div className="project-card">
             <a 
-              href=""
+              href="https://hardware-products.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: 'none', color: 'inherit' }} 
               >
-              <h3>KON-NECT – Real-Time Social Discovery Platform</h3>
+              <h3>NEXUS - A Real Time Hardware E-Commerce Platform</h3>
             </a>
             <p>
-              KON-NECT is a real-time, location-based social discovery platform that connects users with nearby people who share similar interests.
-              Built an interactive live map with real-time location updates, smart interest matching, friend requests, and privacy-focused social discovery within a 20km radius. 
-              Implemented encrypted persistent messaging, live unread notifications, and mutual connection-based chat. 
-              Integrated turn-by-turn navigation, place search, dropped pins, and dynamic route tracking for real-world interaction. 
+        
             </p>
           </div>
         </div>
