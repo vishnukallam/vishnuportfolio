@@ -50,7 +50,7 @@ const Certifications = () => {
     {
       id: 'python_cert',
       title: 'Python Full Stack Development',
-      issuer: 'Ethnus',
+      issuer: 'Edu Skills',
       image: pythonCert,
       alt: 'Python Certificate'
     },
