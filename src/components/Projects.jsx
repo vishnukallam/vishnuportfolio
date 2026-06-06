@@ -1,73 +1,134 @@
 import React from 'react';
 
+import nexusImg from '../assets/projects/nexus.png';
+import konnectImg from '../assets/projects/konnect.png';
+import compilerImg from '../assets/projects/compiler.png';
+
 const Projects = () => {
+
+  const projects = [
+    {
+      id: 'nexus',
+      title: 'NEXUS - A Real Time Hardware E-Commerce Platform',
+      image: nexusImg,
+      link: 'https://hardware-products.vercel.app/',
+      description:
+        'NEXUS HARDWARE, a full-stack ecommerce platform for premium PC hardware components with UPI-based payment integration. Built a responsive frontend using React, Vite, Tailwind CSS, and Material 3 design principles, enabling seamless product browsing, cart management, and secure checkout. Implemented a scalable backend using Node.js, Express, PostgreSQL (Neon), and Prisma ORM with secure JWT authentication and Google OAuth 2.0. Deployed the application using Vercel, Render, and Neon Cloud, focusing on performance, security, and a modern user experience for hardware product purchasing.'
+    },
+    {
+      id: 'konnect',
+      title: 'KON-NECT – Real-Time Social Discovery Platform',
+      image: konnectImg,
+      link: 'https://demographic-social-app-4.vercel.app/',
+      description:
+        'KON-NECT is a real-time, location-based social discovery platform that connects users with nearby people who share similar interests. Built an interactive live map with real-time location updates, smart interest matching, friend requests, and privacy-focused social discovery within a 20km radius. Implemented encrypted persistent messaging, live unread notifications, and mutual connection-based chat. Integrated turn-by-turn navigation, place search, dropped pins, and dynamic route tracking for real-world interaction.'
+    },
+    {
+      id: 'compiler',
+      title: 'Online Compiler Platform',
+      image: compilerImg,
+      link: 'https://onlinecompilerplatform.vercel.app/',
+      description:
+        'A web-based coding environment enabling users to write, compile, and execute programs in real time through an interactive browser-based environment. Implemented execution engines to securely run Python and Java programs with interactive input/output handling. Added features such as file management, package installation, visual output rendering, and cloud deployment support using Vercel, Render, and Docker.'
+    }
+  ];
+
   return (
     <section className="content-section active" id="projects">
       <div className="section-container">
         <h2 className="section-title">Projects</h2>
 
-        <div className="projects-grid">
-          <div className="project-card">
-            <h3>Magno Charger</h3>
-            <p>
-              A TIH-IoT Chanakya-funded hardware innovation designed to enhance
-              battery longevity through automated, user-defined power
-              termination. This intelligent auto-disconnect charger helps
-              prevent overcharging and extend the lifespan of device batteries.
-              A Bluetooth smart charger prototype and mobile app for automatic control, theoretically reducing overcharge risk by 85% and extending battery lifespan by 12-24%, 
-              while decreasing battery swelling risk by 90-95% and eliminating manual unplugging.
-            </p>
-          </div>
-
-          <div className="project-card">
-             <a
-              href="https://onlinecompilerplatform.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none', color: 'inherit' }}
+        <div
+          className="projects-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '25px'
+          }}
+        >
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="project-card"
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                borderRadius: '18px',
+                overflow: 'hidden',
+                padding: '18px',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                cursor: 'default'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.boxShadow =
+                  '0 10px 25px rgba(0,0,0,0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              {/* Project Image */}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-              <h3>Online Compliler Platform</h3>
-            </a>
-            <p>
-              A web-based coding environment enabling users to write, compile, and execute programs in real time through an interactive browser-based environment. 
-              Implemented execution engines to securely run Python and Java programs with interactive input/output handling. 
-              Added features such as file management, package installation, visual output rendering, and cloud deployment support using Vercel, Render, and Docker. 
-            </p>
-          </div>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  style={{
+                    width: '100%',
+                    height: '220px',
+                    objectFit: 'cover',
+                    borderRadius: '14px',
+                    marginBottom: '16px',
+                    cursor: 'pointer',
+                    transition: 'transform 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'scale(1.03)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'scale(1)';
+                  }}
+                />
+              </a>
 
-          <div className="project-card">
-            <a 
-              href="https://demographic-social-app-4.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none', color: 'inherit' }} 
+              {/* Project Title */}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: 'none',
+                  color: 'inherit'
+                }}
               >
-              <h3>KON-NECT – Real-Time Social Discovery Platform</h3>
-            </a>
-            <p>
-              KON-NECT is a real-time, location-based social discovery platform that connects users with nearby people who share similar interests.
-              Built an interactive live map with real-time location updates, smart interest matching, friend requests, and privacy-focused social discovery within a 20km radius. 
-              Implemented encrypted persistent messaging, live unread notifications, and mutual connection-based chat. 
-              Integrated turn-by-turn navigation, place search, dropped pins, and dynamic route tracking for real-world interaction. 
-            </p>
-          </div>
+                <h3
+                  style={{
+                    marginBottom: '12px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {project.title}
+                </h3>
+              </a>
 
-           <div className="project-card">
-            <a 
-              href="https://hardware-products.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none', color: 'inherit' }} 
+              {/* Description */}
+              <p
+                style={{
+                  lineHeight: '1.7',
+                  opacity: '0.9',
+                  fontSize: '0.95rem'
+                }}
               >
-              <h3>NEXUS - A Real Time Hardware E-Commerce Platform</h3>
-            </a>
-            <p>
-              NEXUS HARDWARE, a full-stack ecommerce platform for premium PC hardware components with UPI-based payment integration.
-              Built a responsive frontend using React, Vite, Tailwind CSS, and Material 3 design principles, enabling seamless product browsing, cart management, and secure checkout. 
-              Implemented a scalable backend using Node.js, Express, PostgreSQL (Neon), and Prisma ORM with secure JWT authentication and Google OAuth 2.0.
-              Deployed the application using Vercel, Render, and Neon Cloud, focusing on performance, security, and a modern user experience for hardware product purchasing.
-            </p>
-          </div>
+                {project.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
