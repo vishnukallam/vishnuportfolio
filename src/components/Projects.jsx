@@ -1,8 +1,8 @@
 import React from 'react';
 
-import nexusImg from '../assets/projects/nexus.png';
-import konnectImg from '../assets/projects/konnect.png';
-import compilerImg from '../assets/projects/compiler.png';
+import nexusImg from '../assets/projects/nexus.jpg';
+import konnectImg from '../assets/projects/konnect.jpg';
+import compilerImg from '../assets/projects/compiler.jpg';
 
 const Projects = () => {
   const projects = [
