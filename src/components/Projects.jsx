@@ -62,7 +62,10 @@ const Projects = () => {
               <h3>NEXUS - A Real Time Hardware E-Commerce Platform</h3>
             </a>
             <p>
-        
+              NEXUS HARDWARE, a full-stack ecommerce platform for premium PC hardware components with UPI-based payment integration.
+              Built a responsive frontend using React, Vite, Tailwind CSS, and Material 3 design principles, enabling seamless product browsing, cart management, and secure checkout. 
+              Implemented a scalable backend using Node.js, Express, PostgreSQL (Neon), and Prisma ORM with secure JWT authentication and Google OAuth 2.0.
+              Deployed the application using Vercel, Render, and Neon Cloud, focusing on performance, security, and a modern user experience for hardware product purchasing.
             </p>
           </div>
         </div>
