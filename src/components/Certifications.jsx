@@ -5,20 +5,38 @@ import magnoCert from '../assets/certificates/thumb_magno_charger_certificate.jp
 
 const Certifications = () => {
   const [lightboxImage, setLightboxImage] = useState(null);
-  const [isZoomed, setIsZoomed] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   const openLightbox = (imgSrc) => {
     setLightboxImage(imgSrc);
+    setZoomLevel(1); // Reset zoom
   };
 
   const closeLightbox = () => {
     setLightboxImage(null);
-    setIsZoomed(false);
+    setZoomLevel(1);
   };
 
-  const toggleZoom = (e) => {
+  // Mouse wheel zoom
+  const handleWheelZoom = (e) => {
+    e.preventDefault();
     e.stopPropagation();
-    setIsZoomed(!isZoomed);
+
+    const zoomSpeed = 0.1;
+    const minZoom = 1;
+    const maxZoom = 5;
+
+    if (e.deltaY < 0) {
+      // Scroll up = Zoom in
+      setZoomLevel((prev) =>
+        Math.min(prev + zoomSpeed, maxZoom)
+      );
+    } else {
+      // Scroll down = Zoom out
+      setZoomLevel((prev) =>
+        Math.max(prev - zoomSpeed, minZoom)
+      );
+    }
   };
 
   const certs = [
@@ -52,9 +70,14 @@ const Certifications = () => {
 
         <div className="certs-grid" id="certsGrid">
           {certs.map(cert => (
-            <div className="cert-card" key={cert.id} onClick={() => openLightbox(cert.image)}>
+            <div
+              className="cert-card"
+              key={cert.id}
+              onClick={() => openLightbox(cert.image)}
+            >
               <h3>{cert.title}</h3>
               <p>Issued by: {cert.issuer}</p>
+
               <img
                 src={cert.image}
                 alt={cert.alt}
@@ -66,7 +89,7 @@ const Certifications = () => {
       </div>
 
       {lightboxImage && (
-        <div 
+        <div
           style={{
             position: 'fixed',
             top: 0,
@@ -78,37 +101,56 @@ const Certifications = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            overflow: isZoomed ? 'auto' : 'hidden',
-            cursor: 'zoom-out'
+            overflow: 'auto',
+            cursor: zoomLevel > 1 ? 'grab' : 'default'
           }}
           onClick={closeLightbox}
         >
-          <img 
-            src={lightboxImage} 
-            alt="Certificate View" 
-            style={{ 
-              maxWidth: isZoomed ? 'none' : '90%', 
-              maxHeight: isZoomed ? 'none' : '90%', 
-              transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
-              transition: 'transform 0.3s ease',
+          <img
+            src={lightboxImage}
+            alt="Certificate View"
+            onWheel={handleWheelZoom}
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: '90%',
+              maxHeight: '90%',
+              transform: `scale(${zoomLevel})`,
+              transition: 'transform 0.15s ease-out',
               borderRadius: '10px',
               boxShadow: '0 0 50px rgba(0,0,0,0.5)',
-              cursor: isZoomed ? 'zoom-out' : 'zoom-in',
-              margin: isZoomed ? 'auto' : '0'
-            }} 
-            onClick={toggleZoom}
+              transformOrigin: 'center center',
+              userSelect: 'none'
+            }}
           />
-          <div 
+
+          {/* Close button */}
+          <div
+            onClick={closeLightbox}
             style={{
               position: 'absolute',
               top: '20px',
-              right: '20px',
+              right: '30px',
               color: 'white',
               fontSize: '2rem',
               cursor: 'pointer'
             }}
           >
             <i className="fas fa-times"></i>
+          </div>
+
+          {/* Zoom indicator */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '20px',
+              color: 'white',
+              fontSize: '1rem',
+              background: 'rgba(255,255,255,0.1)',
+              padding: '8px 14px',
+              borderRadius: '8px'
+            }}
+          >
+            Zoom: {(zoomLevel * 100).toFixed(0)}%
           </div>
         </div>
       )}
