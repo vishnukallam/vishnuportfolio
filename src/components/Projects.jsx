@@ -1,13 +1,12 @@
 import React from 'react';
 
 const Projects = () => {
-
   const projects = [
     {
       id: 'nexus',
       title: 'NEXUS - A Real Time Hardware E-Commerce Platform',
       image:
-        'https://github.com/user-attachments/assets/5e512f53-c22a-435d-b8cf-659e7f0c6f5b',
+        'https://github.com/user-attachments/assets/5e512f53-c22a-435d-b8cf-659e7f0c6f5b?raw=true',
       link: 'https://hardware-products.vercel.app/',
       description:
         'NEXUS HARDWARE, a full-stack ecommerce platform for premium PC hardware components with UPI-based payment integration. Built a responsive frontend using React, Vite, Tailwind CSS, and Material 3 design principles, enabling seamless product browsing, cart management, and secure checkout. Implemented a scalable backend using Node.js, Express, PostgreSQL (Neon), and Prisma ORM with secure JWT authentication and Google OAuth 2.0. Deployed the application using Vercel, Render, and Neon Cloud, focusing on performance, security, and a modern user experience for hardware product purchasing.'
@@ -16,7 +15,7 @@ const Projects = () => {
       id: 'konnect',
       title: 'KON-NECT – Real-Time Social Discovery Platform',
       image:
-        'https://github.com/user-attachments/assets/c7b43206-679a-4233-874c-c8d8eddefe9b',
+        'https://github.com/user-attachments/assets/c7b43206-679a-4233-874c-c8d8eddefe9b?raw=true',
       link: 'https://demographic-social-app-4.vercel.app/',
       description:
         'KON-NECT is a real-time, location-based social discovery platform that connects users with nearby people who share similar interests. Built an interactive live map with real-time location updates, smart interest matching, friend requests, and privacy-focused social discovery within a 20km radius. Implemented encrypted persistent messaging, live unread notifications, and mutual connection-based chat. Integrated turn-by-turn navigation, place search, dropped pins, and dynamic route tracking for real-world interaction.'
@@ -25,7 +24,7 @@ const Projects = () => {
       id: 'compiler',
       title: 'Online Compiler Platform',
       image:
-        'https://github.com/user-attachments/assets/225bd775-eacb-404d-9f14-7892a0723eee',
+        'https://github.com/user-attachments/assets/225bd775-eacb-404d-9f14-7892a0723eee?raw=true',
       link: 'https://onlinecompilerplatform.vercel.app/',
       description:
         'A web-based coding environment enabling users to write, compile, and execute programs in real time through an interactive browser-based environment. Implemented execution engines to securely run Python and Java programs with interactive input/output handling. Added features such as file management, package installation, visual output rendering, and cloud deployment support using Vercel, Render, and Docker.'
@@ -68,7 +67,6 @@ const Projects = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              {/* Project Image */}
               <a
                 href={project.link}
                 target="_blank"
@@ -77,6 +75,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
                   style={{
                     width: '100%',
                     height: '220px',
@@ -87,15 +86,14 @@ const Projects = () => {
                     transition: 'transform 0.3s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.transform = 'scale(1.03)';
+                    e.currentTarget.style.transform = 'scale(1.03)';
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.transform = 'scale(1)';
+                    e.currentTarget.style.transform = 'scale(1)';
                   }}
                 />
               </a>
 
-              {/* Project Title */}
               <a
                 href={project.link}
                 target="_blank"
@@ -107,15 +105,13 @@ const Projects = () => {
               >
                 <h3
                   style={{
-                    marginBottom: '12px',
-                    cursor: 'pointer'
+                    marginBottom: '12px'
                   }}
                 >
                   {project.title}
                 </h3>
               </a>
 
-              {/* Description */}
               <p
                 style={{
                   lineHeight: '1.7',
